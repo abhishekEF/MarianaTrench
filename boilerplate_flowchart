@@ -1,0 +1,94 @@
+{
+    "edges": [
+        {
+            "source": "17e51bb1",
+            "target": "c86aa6ff"
+        },
+        {
+            "source": "c86aa6ff",
+            "target": "cf7c3130"
+        }
+    ],
+    "layers": [],
+    "modular_pipelines": {
+        "__root__": {
+            "children": [
+                {
+                    "id": "17e51bb1",
+                    "type": "data"
+                },
+                {
+                    "id": "cf7c3130",
+                    "type": "data"
+                },
+                {
+                    "id": "c86aa6ff",
+                    "type": "task"
+                }
+            ],
+            "id": "__root__",
+            "inputs": [],
+            "name": "Root",
+            "outputs": []
+        }
+    },
+    "nodes": [
+        {
+            "full_name": "preprocess_demographics_node",
+            "id": "c86aa6ff",
+            "modular_pipelines": [],
+            "name": "Preprocess Demographics Node",
+            "parameters": {},
+            "pipelines": [
+                "de",
+                "__default__"
+            ],
+            "tags": [],
+            "type": "task"
+        },
+        {
+            "dataset_type": "kedro.extras.datasets.pandas.csv_dataset.CSVDataSet",
+            "full_name": "Demographics",
+            "id": "17e51bb1",
+            "layer": null,
+            "modular_pipelines": [],
+            "name": "Demographics",
+            "pipelines": [
+                "de",
+                "__default__"
+            ],
+            "tags": [],
+            "type": "data"
+        },
+        {
+            "dataset_type": "kedro.extras.datasets.pandas.csv_dataset.CSVDataSet",
+            "full_name": "preprocessed_demographics",
+            "id": "cf7c3130",
+            "layer": null,
+            "modular_pipelines": [],
+            "name": "Preprocessed Demographics",
+            "pipelines": [
+                "de",
+                "__default__"
+            ],
+            "tags": [],
+            "type": "data"
+        }
+    ],
+    "pipelines": [
+        {
+            "id": "__default__",
+            "name": "Default"
+        },
+        {
+            "id": "de",
+            "name": "De"
+        },
+        {
+            "id": "ds",
+            "name": "Ds"
+        }
+    ],
+    "selected_pipeline": "__default__",
+    "tags": []
+}

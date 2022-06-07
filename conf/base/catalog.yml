@@ -6,9 +6,19 @@
 
 
 Demographics:
- type: spark.SparkDataSet
- filepath: data/01_raw/company/MinnesotaDemographicsTract.csv
- file_format: csv
-
- ElectricDAta:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/MinnesotaDemographicsTract.csv
  
+ 
+
+preprocessed_demographics:
+ type: pandas.CSVDataSet
+ filepath: data/02_intermediate/preprocessed_demographics.csv
+model_input_table:
+  type: pandas.ParquetDataSet
+  filepath: data/03_primary/model_input_table.pq
+ 
+regressor:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/regressor.pickle
+  versioned: true
