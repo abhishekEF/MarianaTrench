@@ -6,7 +6,7 @@ generated using Kedro 0.18.1
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import evaluate_model, split_data, train_model
+from .nodes import evaluate_model, split_data, train_model, calculate_corescore
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -27,8 +27,14 @@ def create_pipeline(**kwargs) -> Pipeline:
             node(
                 func=evaluate_model,
                 inputs=["regressor", "X_test", "y_test"],
-                outputs=None,
-                name="evaluate_model_node",
+                outputs="Weight Matrix",
+                name="Learn-Weights-From-Regression-Analysis",
+            ),
+            node(
+                func=calculate_corescore,
+                inputs=["Weight Matrix", "model_input_table", "closest_gas-stations"],
+                outputs="Ranked CoReScore by Gas Station",
+                name="Calculate-and-Rank-CoReScore-by-Gas-Station",
             ),
         ]
     )

@@ -1,7 +1,0 @@
-model_options:
-  test_size: 0.2
-  random_state: 3
-  features:
-    - Estimate!!Total!!Population 1 year and over
-    - Estimate!!Total!!Population 1 year and over!!AGE!!1 to 4 years
-    

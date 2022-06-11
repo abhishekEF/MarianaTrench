@@ -7,16 +7,43 @@
 
 Demographics:
   type: pandas.CSVDataSet
-  filepath: data/01_raw/MinnesotaDemographicsTract.csv
+  filepath: data/01_raw/DemographicsTract.csv
+  #credentials: {"aws_access_key_id": AKIA42DSCTO23B3UYROU, "aws_secret_access_key": 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}
+
+
+Wind-Power:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/WindPower.csv
+  load_args:
+    encoding: "latin-1"
+  save_args:
+    encoding: 'latin-1'
+    
+EV-Registration:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/EVRegistrationMN.csv
+
+Renewable-Energies: 
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/MNUtilityDER.csv
+
+Gas-Stations: 
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/MNUtilityDER.csv
  
- 
+preprocessed_wind:
+ type: pandas.CSVDataSet
+ filepath: data/02_intermediate/preprocessed_wind.csv
+ save_args:
+    encoding: "utf-8"
 
 preprocessed_demographics:
  type: pandas.CSVDataSet
  filepath: data/02_intermediate/preprocessed_demographics.csv
+
 model_input_table:
-  type: pandas.ParquetDataSet
-  filepath: data/03_primary/model_input_table.pq
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/model_input_table.csv
  
 regressor:
   type: pickle.PickleDataSet
