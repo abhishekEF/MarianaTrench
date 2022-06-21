@@ -79,7 +79,7 @@ def preprocess_demographics(Demographics: pd.DataFrame) -> pd.DataFrame:
     return Demographics
 
 def create_model_input_table(
-    Demographics: pd.DataFrame, Wind: pd.DataFrame, ev_reg: pd.DataFrame, utility: pd.DataFrame, liea: pd.DataFrame, outage: pd.DataFrame
+    Demographics: pd.DataFrame, Wind: pd.DataFrame
 ) -> pd.DataFrame:
     """Combines all data to create a model input table.
 
